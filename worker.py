@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import time
+import os
 
 client = discord.Client()
 
@@ -20,4 +21,4 @@ async def on_message(message):
         await client.delete_message(message)
         await client.send_message(message.channel, 'Driver <@'+message.author.id+'> signing off at '+time.strftime('%H%M')+' hours')
 
-client.run(process.env.BOT_TOKEN)
+client.run(os.environ.get('BOT_TOKEN'))
