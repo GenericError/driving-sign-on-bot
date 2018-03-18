@@ -14,7 +14,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if "Licensed Driver" in message.author.roles:
+    if "Licensed Drivers" in message.author.roles:
         if message.content.lower() == ('#signon'):
             await client.delete_message(message)
             await client.send_message(message.channel, 'Driver <@'+message.author.id+'> signing on at '+time.strftime('%H%M')+' hours')
